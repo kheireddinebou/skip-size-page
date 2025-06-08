@@ -1,54 +1,88 @@
-# React + TypeScript + Vite
+# Skip Size Selection Page - Redesign
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A complete redesign of WeWantWaste's "Choose Your Skip Size" page with modern UI and mobile responsive design.
 
-Currently, two official plugins are available:
+## 🔗 Links
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **GitHub Repository**: https://github.com/kheireddinebou/skip-size-page
+- **Live Demo**: https://codesandbox.io/p/github/kheireddinebou/skip-size-page/main?import=true
+- **Original Page**: [WeWantWaste.co.uk](https://wewantwaste.co.uk/) (enter the postcode LE10 1SH and select an address, then select garden waste)
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React 19** + **TypeScript** + **Vite**
+- **Tailwind CSS** with custom dark violet theme
+- **React Icons** for UI elements
+- **React Router** for navigation
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 🎨 Design Approach
+
+### Key Changes
+- **Dark violet theme** - Modern, professional color scheme
+- **Card-based layout** - Replaced list with interactive cards
+- **Mobile responsive** - Optimized for all screen sizes
+- **Improved UX** - Clear pricing, better visual hierarchy
+- **Stepper navigation** - Enhanced user flow
+
+### Responsive Design
+- Mobile: Stacked cards with touch-friendly interactions
+- Desktop: Grid layout for better space utilization
+- Consistent spacing and typography across breakpoints
+
+## 📁 Project Structure
+
+```
+src/
+├── components/
+│   ├── BottomNavigation.tsx
+│   ├── SelectedSkipInfoBanner.tsx
+│   ├── SkipCard.tsx
+│   ├── Stepper/
+│   └── ui/Loader.tsx
+├── pages/Index.tsx
+├── services/skips.ts
+├── types/global.d.ts
+└── styles/index.css
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+# Install dependencies
+npm install
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
 ```
+
+## 📡 API Integration
+
+Fetches skip data from WeWantWaste API:
+```
+https://app.wewantwaste.co.uk/api/skips/by-location?postcode=NR32&area=Lowestoft
+```
+
+Includes proper error handling and loading states.
+
+## ✨ Features
+
+- **Responsive design** - Works on mobile, tablet, and desktop
+- **Interactive cards** - Hover effects and clear selection states
+- **Loading states** - Smooth user experience with loaders
+- **Error handling** - Graceful fallbacks for API issues
+- **Accessibility** - Proper ARIA labels and keyboard navigation
+
+## 🎯 Approach
+
+1. **Analyzed original page** - Understood existing functionality
+2. **Mobile responsive design** - Started with mobile viewport
+3. **Component architecture** - Modular, reusable components
+4. **API integration** - Clean data fetching with error handling
+5. **Responsive scaling** - Enhanced for larger screens
+
+---
+
+*Completed as a technical challenge demonstrating React, TypeScript, responsive design, and modern UI/UX principles.*
