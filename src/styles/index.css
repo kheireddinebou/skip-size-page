@@ -1,13 +1,33 @@
 @import "tailwindcss";
 
+/* Dark Violet Theme */
+@theme {
+  --color-background: oklch(0.1 0.02 280);
+  --color-foreground: oklch(0.9 0.05 280);
+  --color-card: oklch(0.15 0.03 280);
+  --color-card-foreground: oklch(0.9 0.05 280);
+  --color-popover: oklch(0.12 0.025 280);
+  --color-popover-foreground: oklch(0.9 0.05 280);
+  --color-primary: oklch(0.6 0.25 280);
+  --color-primary-foreground: oklch(0.95 0.02 280);
+  --color-secondary: oklch(0.2 0.04 280);
+  --color-secondary-foreground: oklch(0.8 0.06 280);
+  --color-muted: oklch(0.18 0.03 280);
+  --color-muted-foreground: oklch(0.6 0.05 280);
+  --color-border: oklch(0.25 0.04 240 / 40%);
+  --color-input: oklch(0.22 0.035 280 / 60%);
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+}
+
+.container {
+  @media (max-width: 768px) {
+    padding-inline: 16px;
+  }
 }
